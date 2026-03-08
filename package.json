@@ -2,7 +2,13 @@
   "name": "jj-pickup",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "nodemailer": "^8.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^17.3.1"
   }
 }

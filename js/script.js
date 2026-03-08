@@ -227,7 +227,7 @@ const initFormValidation = () => {
         submitBtn.textContent = 'Sending…';
       }
 
-      fetch('/', {
+      fetch('/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(new FormData(form)).toString()
