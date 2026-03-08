@@ -743,9 +743,10 @@ ul {
 }
 
 .pricing-features li::before {
-  content: "✓";
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  content: "\f00c";
   color: var(--accent);
-  font-weight: 700;
   flex-shrink: 0;
 }
 
@@ -1235,9 +1236,10 @@ ul {
 }
 
 .benefits-list li::before {
-  content: "✓";
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  content: "\f00c";
   color: var(--accent);
-  font-weight: 700;
   flex-shrink: 0;
 }
 
@@ -1321,7 +1323,184 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
-   17. Responsive — Tablet (≥ 640px)
+   17. Items We Take Page
+   -------------------------------------------------------------------------- */
+.items-section {
+  padding: var(--section-padding);
+  background-color: var(--bg);
+}
+
+.items-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.item-category-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition);
+}
+
+.item-category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
+}
+
+.item-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: rgba(30, 115, 190, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  transition: background-color var(--transition);
+}
+
+.item-category-card:hover .item-card-icon {
+  background-color: rgba(30, 115, 190, 0.22);
+}
+
+.item-category-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.items-list li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.items-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0.6;
+}
+
+/* Cleanouts banner */
+.cleanouts-section {
+  padding: var(--section-padding);
+  background-color: var(--bg-section);
+}
+
+.cleanouts-banner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.cleanouts-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background-color: rgba(30, 115, 190, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.cleanouts-banner h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.cleanouts-banner p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.cleanouts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.cleanouts-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.cleanouts-list li i {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* What we don't take */
+.no-take-section {
+  padding: var(--section-padding);
+  background-color: var(--bg);
+}
+
+.no-take-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.no-take-item {
+  background-color: rgba(220, 53, 69, 0.06);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.no-take-item i {
+  color: #dc3545;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   18. Responsive — Tablet (≥ 640px)
    -------------------------------------------------------------------------- */
 @media (min-width: 640px) {
   .services-grid {
@@ -1353,6 +1532,23 @@ ul {
   }
 
   .benefits-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .items-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cleanouts-banner {
+    grid-template-columns: 72px 1fr;
+    align-items: start;
+  }
+
+  .cleanouts-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .no-take-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1408,6 +1604,14 @@ ul {
 
   .testimonials-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .items-categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .no-take-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
