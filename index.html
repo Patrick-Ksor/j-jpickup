@@ -692,7 +692,10 @@
 
           <!-- Form -->
           <form class="quote-form reveal" id="quote-form" novalidate
+                name="quote" data-netlify="true" data-netlify-honeypot="bot-field"
                 aria-label="Request a free junk removal quote">
+            <input type="hidden" name="form-name" value="quote" />
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
 
             <div class="form-row">
               <!-- Name -->

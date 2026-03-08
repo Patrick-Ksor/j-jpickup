@@ -243,7 +243,10 @@
           <!-- ── Main Quote Form ──────────────────────────────────────── -->
           <div>
             <form class="quote-form reveal" id="contact-form" novalidate
+                  name="contact" data-netlify="true" data-netlify-honeypot="bot-field"
                   aria-labelledby="contact-page-heading">
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
 
               <div style="margin-bottom: 1.5rem;">
                 <h2 id="contact-page-heading"
