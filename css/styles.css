@@ -554,7 +554,8 @@ ul {
   align-items: center;
   justify-content: center;
   margin-bottom: 1.25rem;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  color: var(--primary);
   transition: background-color var(--transition);
 }
 
@@ -630,7 +631,8 @@ ul {
 }
 
 .step-icon {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
+  color: var(--primary);
   margin-bottom: 0.75rem;
 }
 
@@ -1195,7 +1197,8 @@ ul {
 }
 
 .service-detail-card .service-icon-lg {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: var(--primary);
   background: rgba(30, 115, 190, 0.1);
   width: 80px;
   height: 80px;

@@ -3,7 +3,7 @@
  * ======================
  * Handles: dark mode toggle, sticky nav, mobile hamburger menu,
  *          smooth scroll, scroll-reveal animations, active nav highlight,
- *          form validation + Netlify Forms fetch submit, footer year.
+ *          form validation + direct POST submit, footer year.
  *
  * No frameworks or external libraries used.
  */
@@ -164,7 +164,7 @@ const initActiveNav = () => {
 };
 
 /* ============================================================
-   7. Lead Capture Form — Validation + Netlify Forms Submit
+   7. Lead Capture Form — Validation + Submit
    ============================================================ */
 const initFormValidation = () => {
   const forms = document.querySelectorAll('.quote-form');
@@ -237,7 +237,7 @@ const initFormValidation = () => {
             form.reset();
             form.querySelectorAll('.form-group').forEach(g => g.classList.remove('error', 'success'));
             if (successEl) {
-              successEl.textContent = '✓ Thank you! We\'ll contact you shortly to confirm your pickup.';
+              successEl.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right:6px"></i>Thank you! We\'ll contact you shortly to confirm your pickup.';
               successEl.classList.add('visible');
               successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
               setTimeout(() => successEl.classList.remove('visible'), 8000);
